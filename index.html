@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PulseMetrics AI — Automated Website SEO, Copywriting &amp; Business Data Intelligence Engine</title>
+  <meta name="description" content="Enterprise dual-mode intelligence platform powered by Python, Pandas, and BeautifulSoup4 for automated revenue analytics, CSV data hygiene, and website conversion copy audits." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient-glow ambient-glow-emerald" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-cyan" aria-hidden="true"></div>
+
+  <!-- Top Executive Header -->
+  <header class="top-header">
+    <div class="header-inner">
+      <div class="brand-cluster">
+        <div class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M3 13H7L10 5L14 19L17 13H21" stroke="#10B981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="brand-copy">
+          <div class="brand-title-row">
+            <span class="brand-name">PulseMetrics AI</span>
+            <span class="engine-pill">
+              <span class="pulse-dot"></span>
+              PYTHON + PANDAS ENGINE v2.4
+            </span>
+          </div>
+          <p class="brand-subtitle">Revenue Attribution, Data Hygiene &amp; Conversion Copy Intelligence</p>
+        </div>
+      </div>
+
+      <!-- Mode Switcher Tabs -->
+      <nav class="mode-switcher" role="tablist" aria-label="Intelligence Engine Mode">
+        <button
+          type="button"
+          class="mode-tab active"
+          id="tab-analytics"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-analytics"
+          data-mode="analytics"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 3v18h18" />
+            <path d="m19 9-5 5-4-4-3 3" />
+          </svg>
+          <span>E-Commerce &amp; Revenue Analytics (CSV Engine)</span>
+        </button>
+
+        <button
+          type="button"
+          class="mode-tab"
+          id="tab-auditor"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-auditor"
+          data-mode="auditor"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+            <path d="M8 11h6" />
+          </svg>
+          <span>Website SEO &amp; Copy Auditor (Scraper Engine)</span>
+        </button>
+      </nav>
+
+      <!-- Right Action Buttons -->
+      <div class="header-actions">
+        <a
+          href="https://github.com/saniatech-ui"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-ghost"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+          <span>View Python Source (GitHub)</span>
+        </a>
+
+        <div class="export-dropdown-wrap">
+          <button type="button" class="btn btn-primary" id="export-report-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            <span>Export Report (CSV/JSON)</span>
+          </button>
+          <div class="export-menu" id="export-menu" role="menu">
+            <button type="button" class="export-menu-item" id="export-json-btn">
+              <span class="mono-badge">JSON</span>
+              <span>Download Full Engine Payload (.json)</span>
+            </button>
+            <button type="button" class="export-menu-item" id="export-csv-btn">
+              <span class="mono-badge">CSV</span>
+              <span>Download Cleaned Intelligence Table (.csv)</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-shell">
+    <!-- Toast Notification Banner -->
+    <div id="status-toast" class="status-toast" role="status" aria-live="polite"></div>
+
+    <!-- ===================================================================== -->
+    <!-- MODE 1: E-COMMERCE & BUSINESS DATA ANALYTICS (DEFAULT ACTIVE VIEW)    -->
+    <!-- ===================================================================== -->
+    <section id="panel-analytics" class="mode-panel active" role="tabpanel" aria-labelledby="tab-analytics">
+      <!-- Interactive Data Control Bar -->
+      <div class="control-bar glass-card">
+        <div class="control-bar-left">
+          <div class="pipeline-badge">
+            <span class="mono-tag">auditor.py :: BusinessDataEngine</span>
+            <span id="active-dataset-name" class="dataset-label">Active: Q4 Global E-Commerce Intelligence (2026)</span>
+          </div>
+          <p id="hygiene-log-line" class="hygiene-meta">
+            Pipeline cleaned 1,420 raw rows — removed 38 duplicate records &amp; repaired 14 null currency entries.
+          </p>
+        </div>
+
+        <div class="control-bar-actions">
+          <label for="csv-upload-input" class="btn btn-emerald-outline upload-label">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="17 8 12 3 7 8" />
+              <line x1="12" y1="3" x2="12" y2="15" />
+            </svg>
+            <span>Upload Raw CSV</span>
+            <input type="file" id="csv-upload-input" accept=".csv,text/csv" class="visually-hidden" />
+          </label>
+
+          <button type="button" class="btn btn-preset active-preset" id="btn-preset-ecommerce" data-dataset="ecommerce">
+            Load Q4 E-Commerce Dataset
+          </button>
+
+          <button type="button" class="btn btn-preset" id="btn-preset-saas" data-dataset="saas">
+            Load SaaS Funnel Leads
+          </button>
+
+          <button type="button" class="btn btn-ghost-sm" id="btn-download-sample">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="12" y1="18" x2="12" y2="12" />
+              <polyline points="9 15 12 18 15 15" />
+            </svg>
+            <span>Download Sample CSV</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 4 Live KPI Cards -->
+      <div class="kpi-grid">
+        <article class="kpi-card glass-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Total Cleaned Revenue</span>
+            <span class="trend-badge trend-positive" id="kpi-revenue-trend">+18.4%</span>
+          </div>
+          <div class="kpi-value mono-num" id="kpi-revenue">$284,650</div>
+          <p class="kpi-footnote" id="kpi-revenue-sub">Verified net attribution post-deduplication</p>
+        </article>
+
+        <article class="kpi-card glass-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Qualified Leads Processed</span>
+            <span class="trend-badge trend-cyan" id="kpi-leads-badge">PANDAS ETL</span>
+          </div>
+          <div class="kpi-value mono-num" id="kpi-leads">6,840</div>
+          <p class="kpi-footnote" id="kpi-leads-sub">Normalized across 4 acquisition channels</p>
+        </article>
+
+        <article class="kpi-card glass-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Net Conversion Rate (%)</span>
+            <span class="trend-badge trend-positive" id="kpi-cvr-trend">+2.1% MoM</span>
+          </div>
+          <div class="kpi-value mono-num" id="kpi-cvr">6.42%</div>
+          <p class="kpi-footnote" id="kpi-cvr-sub">439 confirmed high-intent conversions</p>
+        </article>
+
+        <article class="kpi-card glass-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Data Hygiene Score</span>
+            <span class="trend-badge trend-amber" id="kpi-hygiene-badge">52 ANOMALIES FIXED</span>
+          </div>
+          <div class="kpi-value mono-num" id="kpi-hygiene">96.3%</div>
+          <p class="kpi-footnote" id="kpi-hygiene-sub">38 duplicates purged • 14 null rows repaired</p>
+        </article>
+      </div>
+
+      <!-- 2 Interactive Chart.js Visualizations -->
+      <div class="charts-grid">
+        <article class="chart-card glass-card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Monthly Revenue &amp; Conversion Trajectory</h2>
+              <p class="card-subtitle">Time-series revenue expansion vs. lead-to-customer velocity</p>
+            </div>
+            <span class="mono-chip">6-MONTH COHORT</span>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="trajectoryChart"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card glass-card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Revenue Attribution by Acquisition Channel</h2>
+              <p class="card-subtitle">Multi-channel capital efficiency &amp; normalized pipeline share</p>
+            </div>
+            <span class="mono-chip">CHANNEL ATTRIBUTION</span>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="channelChart"></canvas>
+          </div>
+        </article>
+      </div>
+
+      <!-- Cleaned Data & Actionable Insights Table -->
+      <article class="table-card glass-card">
+        <div class="table-header-bar">
+          <div>
+            <h2 class="card-title">Cleaned Channel Performance &amp; Python Growth Recommendations</h2>
+            <p class="card-subtitle">Automated decision rules generated by <code>BusinessDataEngine._generate_channel_recommendation()</code></p>
+          </div>
+
+          <div class="table-filters">
+            <input
+              type="search"
+              id="channel-search-input"
+              class="filter-input"
+placeholder="Filter channels..."       
+       aria-label="Filter channel metrics"
+            />
+            <select id="channel-tier-filter" class="filter-select" aria-label="Filter by performance tier">
+              <option value="all">All Channels</option>
+              <option value="high">High CVR (&ge; 6.0%)</option>
+              <option value="optimize">Needs Copy Optimization (&lt; 6.0%)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Acquisition Channel</th>
+                <th class="num-col">Cleaned Revenue</th>
+                <th class="num-col">Qualified Leads</th>
+                <th class="num-col">Conversions</th>
+                <th class="num-col">Net CVR</th>
+                <th class="num-col">Avg Deal / AOV</th>
+                <th>Automated Python Strategy Recommendation</th>
+              </tr>
+            </thead>
+            <tbody id="analytics-table-body">
+              <!-- Populated dynamically by script.js -->
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- MODE 2: AUTOMATED WEBSITE SEO & CONVERSION COPY AUDITOR               -->
+    <!-- ===================================================================== -->
+    <section id="panel-auditor" class="mode-panel" role="tabpanel" aria-labelledby="tab-auditor" hidden>
+      <!-- Live URL Audit Bar -->
+      <div class="audit-bar glass-card">
+        <form id="url-audit-form" class="audit-form">
+          <div class="url-input-group">
+            <span class="url-prefix mono-tag">HTTPS://</span>
+            <input
+              type="url"
+              id="audit-url-input"
+              class="url-input"
+              value="https://saniasarwar.vercel.app"
+              placeholder="https://your-saas-landing-page.com"
+              required
+              aria-label="Target Website URL"
+            />
+            <button type="submit" class="btn btn-primary" id="run-audit-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              <span>Run Python Audit</span>
+            </button>
+          </div>
+        </form>
+
+        <div class="audit-presets">
+          <span class="preset-caption">Instant Scraper Benchmarks:</span>
+          <button type="button" class="btn btn-preset active-preset" data-audit-preset="saas">
+            Audit SaaS Landing Page
+          </button>
+          <button type="button" class="btn btn-preset" data-audit-preset="ecommerce">
+            Audit E-Commerce Store
+          </button>
+          <button type="button" class="btn btn-preset" data-audit-preset="clinic">
+            Audit Local Clinic Site
+          </button>
+        </div>
+      </div>
+
+      <!-- Audit Top Summary Cards + Radial Gauge -->
+      <div class="audit-overview-grid">
+        <article class="gauge-card glass-card">
+          <div class="gauge-wrapper">
+            <svg class="radial-gauge" viewBox="0 0 140 140" aria-label="Overall Health Score">
+              <circle class="gauge-track" cx="70" cy="70" r="56" />
+              <circle class="gauge-progress" id="audit-gauge-ring" cx="70" cy="70" r="56" />
+            </svg>
+            <div class="gauge-center">
+              <span class="gauge-score mono-num" id="audit-health-score">92</span>
+              <span class="gauge-denom mono-num">/100</span>
+            </div>
+          </div>
+          <div class="gauge-meta">
+            <span class="mono-chip">OVERALL HEALTH SCORE</span>
+            <h2 class="gauge-domain" id="audit-domain-label">saniasarwar.vercel.app</h2>
+            <p class="gauge-latency mono-num" id="audit-latency-label">HTTP 200 OK • 184 ms • 1,140 words</p>
+          </div>
+        </article>
+
+        <div class="audit-kpis-stack">
+          <article class="kpi-card glass-card">
+            <div class="kpi-top">
+              <span class="kpi-label">Detected CTAs</span>
+              <span class="trend-badge trend-positive" id="audit-cta-badge">HIGH INTENT</span>
+            </div>
+            <div class="kpi-value mono-num" id="audit-cta-count">7 Action CTAs</div>
+            <p class="kpi-footnote" id="audit-cta-samples">Primary: "Book Strategy Call", "Explore Case Studies"</p>
+          </article>
+
+          <article class="kpi-card glass-card">
+            <div class="kpi-top">
+              <span class="kpi-label">H1 &amp; Meta Status</span>
+              <span class="trend-badge trend-cyan" id="audit-h1-badge">SEMANTICALLY VALID</span>
+            </div>
+            <div class="kpi-value" id="audit-h1-status">Optimal (1 H1)</div>
+            <p class="kpi-footnote" id="audit-h1-text">Title: 56 chars • Meta Description: 148 chars</p>
+          </article>
+
+          <article class="kpi-card glass-card">
+            <div class="kpi-top">
+              <span class="kpi-label">Image Alt Coverage</span>
+              <span class="trend-badge trend-positive" id="audit-alt-badge">ACCESSIBLE</span>
+            </div>
+            <div class="kpi-value mono-num" id="audit-alt-coverage">94.4%</div>
+            <p class="kpi-footnote" id="audit-alt-sub">17 of 18 visual assets indexed with descriptive alt text</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- Split View: Actionable Copywriting & SEO Table + Live Python JSON Output Panel -->
+      <div class="audit-workspace-grid">
+        <article class="table-card glass-card">
+          <div class="table-header-bar">
+            <div>
+              <h2 class="card-title">Actionable Issues &amp; Conversion Copywriting Fixes</h2>
+              <p class="card-subtitle">Automated BeautifulSoup4 DOM inspection &amp; direct-response copy diagnostics</p>
+            </div>
+            <div class="severity-summary" id="audit-severity-pills">
+              <span class="sev-pill sev-passed">5 Passed</span>
+              <span class="sev-pill sev-warning">1 Warning</span>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Severity</th>
+                  <th>Audit Check</th>
+                  <th>DOM Finding</th>
+                  <th>Conversion Copy &amp; SEO Fix</th>
+                </tr>
+              </thead>
+              <tbody id="audit-findings-body">
+                <!-- Populated dynamically by script.js -->
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- Live Python JSON Output Panel -->
+        <aside class="json-terminal-card glass-card">
+          <div class="terminal-header">
+            <div class="terminal-dots" aria-hidden="true">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-amber"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="terminal-title">auditor.py — Live JSON Output</span>
+            <button type="button" class="btn btn-ghost-xs" id="copy-json-btn">Copy JSON</button>
+          </div>
+          <pre class="json-pre"><code id="audit-json-output">{}</code></pre>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Executive Footer -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <span>PulseMetrics AI v2.4 • Architected by <a href="https://saniasarwar.vercel.app" target="_blank" rel="noopener noreferrer">Sania Sarwar</a></span>
+      <span class="mono-footer">Stack: Python 3.11 • Pandas • BeautifulSoup4 • Chart.js 4</span>
+    </div>
+  </footer>
+</body>
+</html>
